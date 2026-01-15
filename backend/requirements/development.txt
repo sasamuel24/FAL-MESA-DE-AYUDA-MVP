@@ -1,0 +1,6 @@
+# Development environment requirements
+-r base.txt
+
+# Development tools (minimal set)
+# flask-debugtoolbar==0.14.1  # Uncomment if you need debugging toolbar
+# watchdog==3.0.0  # Uncomment if you need auto-reload

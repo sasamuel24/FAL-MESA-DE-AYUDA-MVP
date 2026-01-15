@@ -1,0 +1,21 @@
+[Unit]
+Description=Cafe Quindio FastAPI Backend Service
+After=network.target
+Requires=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/CAFE-QUINDIO-MESA-DE-AYUDA/backend
+Environment="PATH=/home/ubuntu/CAFE-QUINDIO-MESA-DE-AYUDA/venv/bin"
+ExecStart=/home/ubuntu/CAFE-QUINDIO-MESA-DE-AYUDA/venv/bin/python -m uvicorn main_fastapi:app --host 0.0.0.0 --port 8000
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=cafe-quindio-api
+
+[Install]
+WantedBy=multi-user.target
