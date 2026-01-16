@@ -1,8 +1,0 @@
-# Production environment requirements
--r base.txt
-
-# Production server
-gunicorn==21.2.0
-
-# File handling (for image uploads)
-Pillow==10.1.0
